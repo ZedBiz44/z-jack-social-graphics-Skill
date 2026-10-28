@@ -1,0 +1,19 @@
+# Private image payload. Do not commit actual reference images.
+/assets/identity/
+/assets/environments/
+
+# Build outputs and local verification evidence
+/dist/
+/build/
+*.zip
+*.skill
+__pycache__/
+*.pyc
+/private/
+
+# Credentials and runtime state
+.env
+.env.*
+*.key
+*.pem
+*.token

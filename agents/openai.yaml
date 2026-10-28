@@ -1,0 +1,4 @@
+interface:
+  display_name: "Z Jack Social Graphics"
+  short_description: "Create consistent illustrated Jack social graphics"
+  default_prompt: "Use $z-jack-social-graphics to create an illustrated social graphic featuring Jack."

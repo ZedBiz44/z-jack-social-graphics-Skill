@@ -1,0 +1,5 @@
+# Only these runtime directories and SKILL.md belong in the package.
+agents/
+references/
+assets/
+scripts/
