@@ -21,6 +21,7 @@ Create the requested graphic of the same approved Jack, check both the person an
 - Load `z-files-folders` for approved access, ownership, naming, placement and verified saving; load `z-agent-communication` for all human-facing wording. Use [the companion source record](references/companion-skills.md) if needed. Stop affected actions if required guidance is unavailable.
 - Read [reference roles and scene examples](references/reference-library.md), [the prompt templates](references/prompt-template.md) and [the visual rejection checks](references/quality-checks.md) before generation.
 - Read [platform and image-tool requirements](references/platforms.md) before using image or Drive tools. A skill adds neither capabilities nor account permissions.
+- On Hermes, also read [image-input and package checks](references/hermes-image-inputs.md). Verify actual reference delivery; a local filename alone is not an attached picture.
 - Follow [the operational SOP](https://app.notion.com/p/407a3e33d58180ad8945dc54a67574aa). `z-ai-skill-developer` manages authorized development and staged release, not ordinary image creation.
 
 ## Prepare the request and destination
