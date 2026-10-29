@@ -1,81 +1,73 @@
 ---
 name: z-jack-social-graphics
-description: Create or revise any graphic featuring Jack with consistent likeness and style, reference images, and automatic Shared Drive saving. Exclude actual photographs.
+description: Create or revise graphics featuring Jack with approved face/build references, scene checks and automatic Drive saving. Exclude actual photographs.
 ---
 
 # Z Jack Social Graphics
 
-Use for any created graphic that needs Jack in it. Preserve his likeness, follow the requested scene, and automatically save the completed graphic through the approved ZedBiz file process.
+Create the requested graphic of the same approved Jack, check both the person and the physical scene, and save it automatically. A recognizable generic man or an impossible desk/chair arrangement is a failed result.
 
 ## Scope and authority
 
-- Apply to illustrations, avatars, banners, lifestyle scenes, promotional graphics, and other generated graphics containing Jack.
-- Do not activate merely to use an actual photograph Jack has chosen. Real photos may still be reference inputs when a generated graphic is requested.
-- Preserve Jack's facial identity in every style: recognizable mature face, bright blue eyes, warm smile, and short white/salt-and-pepper goatee.
-- Default to polished colorful 2D comic illustration, clean black outlines, vibrant refined cel shading, natural proportions, and warm lighting. Change style only when Jack explicitly requests it.
-- Let the current request override reference-image pose, clothing, activity, expression, lighting, season, framing, and setting. Never carry over pointing or crossed arms unless requested.
-- Default to a grey cap with readable blue ZedBiz lettering unless the requested attire overrides it.
-- Do not invent extra people, props, signage, claims, or brand markings.
-- Do not add, replace, or promote a permanent reference master without Jack's approval. Saving an output does not make it a master.
+- Use for illustrations, avatars, banners, lifestyle scenes, promotions and other created graphics that include Jack. Do not trigger merely to use an actual photograph Jack selected; real photographs can still be authorized reference inputs.
+- Preserve the approved face, apparent age, eyes, smile, goatee, head-to-body proportions, shoulder width, torso and waist build. Do not slim, bulk up, make younger, exaggerate muscles or replace him with a generic man.
+- Keep Jack's proven colorful 2D comic-book caricature style: bold clean black ink outlines, vibrant cel shading and rich saturated colors, matching the approved examples rather than inventing a new treatment. Change style only when requested.
+- The current request controls activity, clothing, expression, pose, gaze, setting, season and lighting, not a different face or build. Never copy crossed arms, plaid clothing or pointing unless appropriate to the request.
+- Default to a grey cap with readable blue ZedBiz lettering unless requested attire overrides it. Do not add unrelated people, furniture, props, claims, signage or brand marks.
+- Saving a graphic never promotes it to a permanent identity master. Keep original references unchanged and obtain Jack's approval for master changes.
 
-## Load the required guidance
+## Load the working instructions
 
-- Load `z-files-folders` for file placement, names, approved access, and upload verification.
-- Load `z-agent-communication` for all human-facing wording.
-- Use [the companion source record](references/companion-skills.md) to locate the correct versions. If required guidance is unavailable, stop the affected action rather than inventing it.
-- Read [the reference library](references/reference-library.md), [prompt template](references/prompt-template.md), and [quality checks](references/quality-checks.md) when creating or revising a graphic.
-- Read [platform requirements](references/platforms.md) before using platform-specific image or Drive tools.
-- Use [the Notion SOP](https://app.notion.com/p/407a3e33d58180ad8945dc54a67574aa) for the operational procedure. `z-ai-skill-developer` owns authorized development, validation, and staged release, not routine image work.
+- Load `z-files-folders` for approved access, ownership, naming, placement and verified saving; load `z-agent-communication` for all human-facing wording. Use [the companion source record](references/companion-skills.md) if needed. Stop affected actions if required guidance is unavailable.
+- Read [reference roles and scene examples](references/reference-library.md), [the prompt templates](references/prompt-template.md) and [the visual rejection checks](references/quality-checks.md) before generation.
+- Read [platform and image-tool requirements](references/platforms.md) before using image or Drive tools. A skill adds neither capabilities nor account permissions.
+- Follow [the operational SOP](https://app.notion.com/p/407a3e33d58180ad8945dc54a67574aa). `z-ai-skill-developer` manages authorized development and staged release, not ordinary image creation.
 
-## Prepare the task
+## Prepare the request and destination
 
-- Parse the requested activity, owner, destination use, image format, scene, pose, gaze, attire, props, message, and lighting. Ask only for a missing detail that prevents a correct or authorized result.
-- Before generation, use `z-files-folders` to establish the approved account, owner-specific folder boundary, applicable knowledge key, filename, existing-item check, and write capability.
-- Check the live [Z-Knowledge Folder Structure](https://www.notion.so/386a3e33d58180ea96fbc50b60102fe2) and [Files & Folders Guide](https://www.notion.so/3a9a3e33d58180548f4af69e804dcdfc). Do not maintain a second hardcoded folder map here.
-- Keep account IDs, folder IDs, credentials, private reference locations, and save receipts in private runtime configuration or records, never in the public repository.
-- Confirm the current tool can actually consume reference images and produce an image. Skill installation grants neither image generation nor Drive access.
+- Establish the requested scene, activity, clothing, gaze, pose, props, format and owner. Ask only for details that prevent correct or authorized work; do not make Jack relay an assignment the agent can execute itself.
+- Follow the live [folder structure](https://www.notion.so/386a3e33d58180ea96fbc50b60102fe2) and [Files & Folders Guide](https://www.notion.so/3a9a3e33d58180548f4af69e804dcdfc). A user-specified destination still requires ownership/access verification; do not maintain another folder map here.
+- Verify the executing agent's approved connection and binary upload/read-back ability. Keep private accounts, folder IDs and receipts outside public code.
+- Include the executing agent's readable name in every new graphic filename, with a useful topic, date and version, using the companion's naming rules. Example: `jack-desk-red-golf-pointing-terry-2026-10-28-v02.png`. Match the extension to the actual image bytes. This is file attribution, not text to draw on the image.
+- Check for existing names before writing; choose a new clear version rather than overwriting an original.
 
-## Select and supply references
+## Choose the scene route and image inputs
 
-- Use the approved close-up portraits for face and style. Use full-body references for proportions when relevant. Choose a relevant subset within the actual tool's image-input limit.
-- Classify inputs as character, environment, prop, or style. Current real environment photos control geometry; illustrated environment references guide framing and treatment.
-- Preserve distinctive architecture and major object relationships. Do not treat invented scenery or tiny screen interfaces in illustrated examples as real-world facts.
-- Pass actual image files as supported image inputs to the generation/editing tool. Mentioning filenames in a text prompt does not enforce likeness.
-- If identity inputs cannot be accessed or passed to the tool, stop generation and explain the missing capability. Never substitute a generic man or recreate a master from memory.
-- If an optional scene reference is missing, use an alternative only when the request permits it and state the limitation.
-- Run [the reference verifier](scripts/verify_reference_assets.py) against [the manifest](assets/reference-manifest.json) when checking a local package. Hash verification is not visual inspection.
+- For a new setting, activity or composition, use reference-based new-scene generation. Keep Jack's short prompt structure; do not require an already-occupied picture to create new scenes.
+- For a small change to an approved compatible picture, an image edit may preserve more of the correct scene. Use it only when the actual tool accepts the base image for editing. Do not confuse an edit test with proof that new-scene generation works.
+- For every route, explicitly assign each actual input its role: primary environment/layout, character face, body/build, optional prop, or approved style/comparison. Choose one primary layout view; do not blend inconsistent desk shapes or camera angles.
+- For a visible seated or standing person, include an approved proportion reference as well as a clear face reference within tool limits. If a single approved scene supplies both, identify it clearly. Do not quietly drop a required role to fit an input limit.
+- Use [the private manifest](assets/reference-manifest.json) and [reference verifier](scripts/verify_reference_assets.py) to check package files. Integrity checks do not prove the image model received or used those images.
+- Pass actual image bytes/files through supported image inputs in the stated order. A filename, description or vision summary alone is not a reference input. If required inputs cannot reach the generator, stop rather than inventing Jack.
+- Confirm the actual image engine and supported interface. The agent's chat model is not necessarily its image engine. Do not silently switch providers, change defaults, add credentials or install services to get a picture out.
 
-## Generate and check
+## Build and generate
 
-- Build the prompt from the current request using the prompt template. Explicitly override stale reference poses and clothing.
-- Use the supported native tool schema and approved connection. Check current help rather than inventing commands, model names, permissions, or upload methods.
-- Confirm an actual image output was produced. A prompt, package, or successful tool call without an image is not a generated graphic.
-- Perform one clear visual check against the request and used references: facial likeness, consistent style, correct activity/attire, recognizable environment, credible hands/props, required text, and format.
-- A style override does not permit facial drift. Required brand wording must remain readable and accurate.
-- If a material defect makes the graphic unusable, make one focused correction and recheck. Preserve good elements rather than redesigning the whole image for subjective polish.
-- If a material defect remains, retain the work and explain it. Do not label a failed image as a completed deliverable.
+- Use the short template: finished-picture description, mapped environment, character, attire, pose/activity, art style and appropriate lighting. Keep process rules and the review checklist outside the artistic prompt.
+- Add only the task's necessary counts and physical relationships: who occupies which item, body support, object placement and believable contact. For this single-person desk test: one occupied existing chair at the working side, no extra chair/desk, and no desktop or edge passing through the stomach/torso.
+- Apply the requested gaze rather than always facing the camera. Match lighting to the actual scene rather than copying timber-wall wording into unrelated places.
+- Use the current supported tool schema and the approved existing service route. Record image-engine/model and actual input roles privately so the result can be repeated.
+- Produce one initial image, retaining the source prompt and output. Do not treat a success response without a real image as completion.
 
-## Save automatically and verify
+## Reject visual failures before delivery
 
-- Automatically save each completed task graphic using `z-files-folders`. Do not ask Jack for separate permission before a routine save or require a draft label unless the assignment calls for one.
-- Keep completed social graphics in the owner-appropriate social-graphics home, website-only graphics in its website home, and reusable graphics in its general graphics home under the live guide.
-- Never overwrite or delete an original. Reuse the correct existing item or choose an informative version after checking duplicates.
-- After upload, obtain the returned file ID and independently read back its metadata and usable image content through the executing agent's own approved connection.
-- Verify name, parent ancestry, Shared Drive identity, image type/size, intended dimensions, and accessible content. Compare a supported checksum or downloaded content when appropriate.
-- Follow [the private receipt contract](references/save-receipt.md) and optionally run [the receipt checker](scripts/check_save_receipt.py). The checker only examines supplied facts; it cannot prove an upload or visual inspection happened.
-- After a timed-out write, inspect the returned ID and expected folder before retrying. Stop after three unsuccessful attempts at the same operation.
-- If saving cannot be verified, preserve and return the local image as `not-saved`, explain the actual failure, and state what access or decision is needed. Do not call the task complete.
+- Open the actual result and compare it with the request, supplied identity/build inputs, primary layout view and approved scene examples. Use [the visual checklist](references/quality-checks.md) and state what is uncertain rather than inventing measurements or a perfect-match score.
+- Fail changed facial character/build, wrong requested pose/attire, extra or unsupported chairs, wrong desk layout, impossible hands, or furniture passing through the body. Ordinary foreground occlusion is not the same as impossible intersection.
+- Check counts, occupancy, support and body/object boundaries before small decorative details. A nice background, readable cap or correct shirt does not excuse a bad physical scene.
+- If one focused material defect remains, make at most one targeted correction in the same verified route. Name the actual defect and preserve only elements that are already correct; do not instruct the tool to preserve a broken desk arrangement.
+- Recheck the corrected result against the complete checklist. If it still fails, or identity/layout is broadly broken, retain the attempt, report the concrete problem and stop. Do not run repeated variations or label a failed picture finished.
 
-## Limits and completion
+## Save automatically and finish
 
-- Routine graphics work does not authorize public posting, scheduling, sharing changes, source deletion, runtime installation, new OAuth setup, new paid services, or broader agent deployment.
-- If a new material risk or scope change appears, stop that action, explain the options, and obtain Jack's decision before proceeding.
-- Return the graphic, verified Drive link, and dimensions in clear language. Mention only actual checks and important limitations.
-- Record technical changes and failures in the relevant GitHub issue; append the activity and result to the current Notion daily journal. Keep business image binaries in Drive, not GitHub.
-- Finish only when the graphic meets the request and its automatic save has been verified. A local checksum, package check, or another agent's connection is not a real end-to-end test.
+- Automatically save a passing graphic with the agent-attributed filename using `z-files-folders`; do not add another approval step for a routine authorized save. Save social, website-only and reusable work in their owner-appropriate homes under the live guide.
+- Use the executing agent's own approved connection to read back returned file ID, name, parent ancestry, Shared Drive, type, size, dimensions and usable image content. Verify content/hash when supported.
+- Follow [the private receipt contract](references/save-receipt.md); [the receipt checker](scripts/check_save_receipt.py) checks supplied facts, not whether an upload or visual review actually happened.
+- After a timed-out upload, inspect the expected folder/file ID before retrying. Stop after three unsuccessful attempts at the same temporary operation. If saving is unverified, preserve the local output as not-saved and report the real issue.
+- Keep failed attempts separate from completed deliverables. Never overwrite/delete originals, change sharing, publish, schedule, set up OAuth, add paid services or deploy to other agents during routine image work.
+- Return the verified Drive link, filename, dimensions and actual check result in plain language. Report failures honestly. Record technical work in GitHub and append activity to the current Notion daily journal without putting private image binaries in public code.
+- Finish only when the graphic meets the request and its automatic save is verified. Jack approves wider rollout after a real one-agent result; do not claim all-platform compatibility from a package check.
 
-## Build and pilot resources
+## Authorized build resources
 
-- Use [the package builder](scripts/build_package.py) only for authorized builds. A code-only public download is not generation-ready until its private reference payload is supplied and verified.
-- Use [the pilot request](assets/pilot-request.md) as a test input, not a permanent pose or clothing preference.
-- Apply `z-ai-skill-developer` validation and one-agent testing before wider installation. Preserve the approved source version and package checksum.
+- Use [the package builder](scripts/build_package.py) only for authorized builds. Public code alone is not reference-ready; include and verify the private approved payload.
+- Use [the pilot request](assets/pilot-request.md) as a test, not a permanent pose/clothing default. Keep source commit, private package hash and installed-file checks together.

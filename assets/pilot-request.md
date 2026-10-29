@@ -1,7 +1,11 @@
-# First ChatGPT Pilot Request
+# Reference-Based Desk Test
 
-Create one square illustrated social graphic of Jack seated at the loft desk and smiling toward the camera. Show one hand using a mouse and the other holding a plain mug. Dress him in a light-blue short-sleeve button shirt that is not plaid, blue jeans, and the default ZedBiz cap.
+Create one landscape social graphic of the same approved Jack seated naturally at his loft workstation. He wears a solid red collared golf shirt and the grey ZedBiz cap, looks toward the camera and points with one hand. Let the other hand rest naturally on the desk or mouse.
 
-Use warm daytime light. Make the three-monitor desk, timber triangular windows, burgundy wall, plants, and railing visible. Do not add extra signage or make scene claims outside the opened approved references.
+Supply actual images in the roles/order documented in the prompt template: the primary desk-layout image, an approved full-body/build reference and an approved face reference. Create a new scene from those references. Compare the result with Jack's approved seated scene examples; do not merely report that the files exist.
 
-Use the consistent illustrated Jack identity: blue eyes, warm mature face, white goatee, late-50s appearance, 2D comic outlines, and cel shading. Save the completed task graphic automatically through `z-files-folders` after the required route and account checks.
+Keep the referenced wooden desk, three-monitor arrangement, timber triangular windows, burgundy wall, plants and railing. Jack uses the existing single chair at the working side of the desk. Do not keep an empty chair and add another. His body must be naturally supported, with no desktop or desk edge passing through his stomach or torso. Keep the pose, hands and contact with the desk believable.
+
+Use Jack's colorful comic-book caricature style, clean bold black outlines, vibrant cel shading, rich colors and warm daytime lighting. Preserve the approved face, age appearance and body build; do not slim, bulk up or substitute a generic man.
+
+Inspect the actual result before saving, with at most one focused correction through the same verified route. Automatically save a passing result in the current assignment's approved destination. Include the executing agent's name in the filename, using the companion naming guide, a new version and the true image extension. Return the actual filename, dimensions, verified Drive file link and any remaining material limitation. Do not publish or overwrite an original.

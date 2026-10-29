@@ -25,6 +25,9 @@ EXPECTED_FILES: dict[str, str] = {
     "assets/environments/office/office-wide-loft.png": "environment",
     "assets/environments/office/office-hallway-reverse.png": "environment",
     "assets/environments/office/office-desk-closeup.png": "environment",
+    "assets/approved-scenes/jack-office-mouse-mug.png": "approved-scene",
+    "assets/approved-scenes/jack-office-seated-mug.png": "approved-scene",
+    "assets/approved-scenes/jack-deck-bbq.png": "approved-scene",
 }
 EXPECTED_SKILL = "z-jack-social-graphics"
 EXPECTED_SCHEMA_VERSION = 1

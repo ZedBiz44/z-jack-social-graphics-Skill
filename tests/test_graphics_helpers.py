@@ -69,8 +69,19 @@ class ReferenceVerifierTests(unittest.TestCase):
             write_manifest(manifest_path, manifest)
             result = verify_reference_assets.verify_assets(root, manifest_path)
             self.assertTrue(result["ok"], result["errors"])
-            self.assertEqual(8, len(result["verified_files"]))
+            self.assertEqual(len(verify_reference_assets.EXPECTED_FILES), len(result["verified_files"]))
             self.assertIn("not visually opened", result["caveat"])
+
+    def test_original_eight_only_cannot_pass_revised_payload(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "payload"
+            manifest = manifest_for(root)
+            manifest["files"] = [entry for entry in manifest["files"] if entry["role"] != "approved-scene"]
+            manifest_path = Path(directory) / "reference-manifest.json"
+            write_manifest(manifest_path, manifest)
+            result = verify_reference_assets.verify_assets(root, manifest_path)
+            self.assertFalse(result["ok"])
+            self.assertTrue(any("missing expected paths" in error for error in result["errors"]))
 
     def test_missing_and_tampered_payload_fail(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

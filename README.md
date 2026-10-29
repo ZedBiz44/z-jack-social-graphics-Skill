@@ -20,7 +20,7 @@ See [the exact companion source records](references/companion-skills.md). The li
 
 ## Reference images and safety
 
-The repository is public and deliberately contains no identity or home reference images, secrets, credentials, account IDs, private Drive IDs, or private save receipts. A private package adds the eight approved images listed in [the reference-library contract](references/reference-library.md) and `assets/reference-manifest.json`.
+The repository is public and deliberately contains no identity or home reference images, secrets, credentials, account IDs, private Drive IDs, or private save receipts. A private package adds the original eight reference images and three approved scene-comparison images listed in [the reference-library contract](references/reference-library.md) and `assets/reference-manifest.json`. The original identity masters remain unchanged.
 
 A downloaded code-only package is not generation-ready. Supply the private payload through the approved private channel and verify it. Saving an output does not authorize changing a reference master. Jack must approve master changes and wider installation.
 
@@ -34,13 +34,15 @@ python3 -m unittest discover -s tests -v
 python3 scripts/build_package.py --private-assets /approved/local/reference-payload --output-dir /approved/local/build-output
 ```
 
-The private payload directory contains the `assets/identity/` and `assets/environments/office/` paths expected by the manifest. Run the builder's `--help` for supported options. Omit `--private-assets` only to build a clearly labelled code-only package. The builder records the source commit, reference-manifest checksum, runtime file hashes, and ZIP checksum outside the installed skill folder.
+The private payload directory contains the `assets/identity/`, `assets/environments/office/` and `assets/approved-scenes/` paths expected by the manifest. Run the builder's `--help` for supported options. Omit `--private-assets` only to build a clearly labelled code-only package. The builder records the source commit, reference-manifest checksum, runtime file hashes, and ZIP checksum outside the installed skill folder.
 
 Validate the built folder with the bundled validator and the target platform's current validator when available. The validator helper is reused from the recorded Z AI Skill Developer source. It requires a real YAML reader; do not replace that check with ad-hoc parsing.
 
 ## Real task testing and release
 
 Use `assets/pilot-request.md` for a representative test and the acceptance checks in `references/quality-checks.md`. Verify actual platform discovery, reference-image input, image generation, and upload/read-back through that agent's own connection. A local checker or package import alone is not a successful real task.
+
+Use Jack's short new-scene prompt pattern with actual ordered reference inputs. Check face/build and physical scene relationships, not just requested objects and shirt color. Include the executing agent's name in the internal output filename. Optional edits of an approved scene do not alone prove the new-scene route works.
 
 Test one agent, present the result to Jack, and obtain approval before wider installation. Install only the exact tested source-linked package. Keep changing rollout status in authoring activity records and Notion, not in runtime instructions.
 
