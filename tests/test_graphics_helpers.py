@@ -61,6 +61,20 @@ def write_manifest(path: Path, document: dict) -> None:
 
 
 class ReferenceVerifierTests(unittest.TestCase):
+    def test_oversized_but_hash_valid_references_fail_before_provider_call(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "payload"
+            manifest = manifest_for(root)
+            relative = verify_reference_assets.OFFICE_INPUTS[0]
+            payload = write_image(root / relative, b"x" * verify_reference_assets.MAX_OFFICE_REFERENCE_BYTES)
+            entry = next(item for item in manifest["files"] if item["path"] == relative)
+            entry.update(size_bytes=len(payload), sha256=hashlib.sha256(payload).hexdigest())
+            manifest_path = Path(directory) / "reference-manifest.json"
+            write_manifest(manifest_path, manifest)
+            result = verify_reference_assets.verify_assets(root, manifest_path)
+            self.assertFalse(result["ok"])
+            self.assertTrue(any("byte budget" in error for error in result["errors"]))
+
     def test_valid_synthetic_payload(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory) / "payload"
@@ -85,7 +99,7 @@ class ReferenceVerifierTests(unittest.TestCase):
 
     def test_selected_office_base_is_unique(self) -> None:
         office_paths = [path for path in verify_reference_assets.EXPECTED_FILES if path.startswith("assets/environments/office/")]
-        self.assertEqual(["assets/environments/office/office-main.png"], office_paths)
+        self.assertEqual(["assets/environments/office/office-main.jpg"], office_paths)
         self.assertFalse(any("jack-office-" in path for path in verify_reference_assets.EXPECTED_FILES))
 
     def test_retired_office_image_in_active_payload_fails(self) -> None:

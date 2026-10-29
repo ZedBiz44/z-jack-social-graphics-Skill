@@ -5,7 +5,7 @@ Use actual supported image inputs. A filename written in a prompt is not a refer
 ## Choose the route
 
 - **New scene:** use separately supplied environment, body, and face references for a genuinely new setting.
-- **Office desk insertion:** use the supplied `office-main.png` as the sole base and layout authority; insert Jack into its existing chair rather than freely rebuilding or reframing the office.
+- **Office desk insertion:** use the supplied `office-main.jpg` as the sole base and layout authority; insert Jack into its existing chair rather than freely rebuilding or reframing the office.
 - **Focused correction:** after one actual-input-supported attempt, make at most one correction for one precisely identified material defect through the same verified route.
 
 Before a call, inspect current tool help and confirm actual image-input handling, input limit, generation or edit capability, output handling, and engine. If the tool cannot receive the required actual inputs, stop and report the gap. Do not promise pixel-exact generative preservation.
@@ -16,11 +16,11 @@ Resolve SKILL_ROOT to this agent's actual installed skill directory and expand t
 
 Record the exact attached files, their actual order, and their roles. Select one layout authority; do not blend conflicting camera views. For the office desk test, attach only these three files in this order:
 
-1. `{SKILL_ROOT}/assets/environments/office/office-main.png`: supplied office base and sole layout authority.
-2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.png`: mature body build.
+1. `{SKILL_ROOT}/assets/environments/office/office-main.jpg`: supplied office base and sole layout authority.
+2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.jpg`: mature body build.
 3. `{SKILL_ROOT}/assets/identity/jack-portrait-pointing.jpg`: facial identity.
 
-Do not attach a retired office image, an occupied-office comparison, or an earlier generated office image. `jack-deck-bbq.png` is a task-specific non-office comparison only and is not an office control.
+Do not attach a retired office image, an occupied-office comparison, or an earlier generated office image. `jack-deck-bbq.jpg` is a task-specific non-office comparison only and is not an office control.
 
 ## Compact prompt pattern
 
@@ -45,7 +45,7 @@ Use this only when the live tool has actually attached the three office desk-tes
 ```text
 Edit Input 1, the supplied office base, by placing Jack in its existing chair. Return a 4:3 landscape 2D colorful comic-book caricature.
 
-Environment: Input 1, office-main.png, is the supplied office base and sole camera/layout authority. Preserve its full original wide 4:3 view, desk shape, drawers, end panel, desk position, monitors, windows, railing, surrounding objects, and chair location.
+Environment: Input 1, office-main.jpg, is the supplied office base and sole camera/layout authority. Preserve its full original wide 4:3 view, desk shape, drawers, end panel, desk position, monitors, windows, railing, surrounding objects, and chair location.
 Character: Inputs 2–3 preserve Jack's approved mature build, face, apparent age, eyes, smile, and goatee.
 Attire: Solid black collared golf shirt and ZedBiz cap.
 Pose: Jack is seated in the existing chair, faces and looks toward the camera, points naturally toward the camera with one hand, and places the other naturally on the mouse or desk.

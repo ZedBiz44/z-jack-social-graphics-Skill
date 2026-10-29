@@ -1,6 +1,7 @@
 # Private image payload. Do not commit actual reference images.
 /assets/identity/
 /assets/environments/
+/assets/approved-scenes/
 
 # Build outputs and local verification evidence
 /dist/

@@ -29,8 +29,8 @@ Reject the initial image unless all applicable checks pass:
 
 Apply these checks only when an office desk image is requested; use task-specific checks for BBQ and other non-office scenes.
 
-- Confirm that the actual attached inputs were, in order, `office-main.png` as base, `jack-standing-pointing-front.png` as body build, and `jack-portrait-pointing.jpg` as facial identity. Reject a call that substituted a retired office image, occupied-office comparison, or prior generated office output.
-- Confirm that `office-main.png` remains the sole authority for the full original wide 4:3 view, office camera, and framing.
+- Confirm that the actual attached inputs were, in order, `office-main.jpg` as base, `jack-standing-pointing-front.jpg` as body build, and `jack-portrait-pointing.jpg` as facial identity. Reject a call that substituted a retired office image, occupied-office comparison, or prior generated office output.
+- Confirm that `office-main.jpg` remains the sole authority for the full original wide 4:3 view, office camera, and framing.
 - Confirm the desk shape, drawers, end panel, position, monitors, windows, railing, surrounding objects, and chair location remain as the supplied base presents them.
 - Confirm Jack occupies the one existing simple grey upholstered chair with pale curved arms and a pale five-spoke base. Reject a black mesh/modern metal replacement, an empty retained chair, an added chair, or an added/rebuilt desk.
 - Confirm that the chair visibly supports a naturally seated Jack and that the desk or other furniture does not intersect his torso, stomach, arms, or legs.

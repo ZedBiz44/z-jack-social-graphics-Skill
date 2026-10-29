@@ -6,11 +6,11 @@ Create one 4:3 landscape social graphic of approved Jack seated naturally at the
 
 Use an actual-input-supported office insertion/new-scene route. Attach these exact private images in this order:
 
-1. `{SKILL_ROOT}/assets/environments/office/office-main.png`: the supplied base and sole authority for office architecture, furniture, camera, and framing.
-2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.png`: approved full-body/build reference.
+1. `{SKILL_ROOT}/assets/environments/office/office-main.jpg`: the supplied base and sole authority for office architecture, furniture, camera, and framing.
+2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.jpg`: approved full-body/build reference.
 3. `{SKILL_ROOT}/assets/identity/jack-portrait-pointing.jpg`: approved facial reference.
 
-Treat this as placing Jack into `office-main.png`, not freely reconstructing or reframing the office. Preserve the full original wide 4:3 view, desk shape, drawers, end panel, desk position, monitors, windows, railing, surrounding objects, and chair location. Jack occupies the one existing simple grey upholstered chair with pale curved arms and a pale five-spoke base. Do not replace it with a black mesh or modern metal chair, leave an empty chair, add any chair or desk, or allow furniture to intersect his body. Only natural body or hand occlusion is allowed.
+Treat this as placing Jack into `office-main.jpg`, not freely reconstructing or reframing the office. Preserve the full original wide 4:3 view, desk shape, drawers, end panel, desk position, monitors, windows, railing, surrounding objects, and chair location. Jack occupies the one existing simple grey upholstered chair with pale curved arms and a pale five-spoke base. Do not replace it with a black mesh or modern metal chair, leave an empty chair, add any chair or desk, or allow furniture to intersect his body. Only natural body or hand occlusion is allowed.
 
 Use Jack's colorful comic-book caricature style: clean bold black outlines, vibrant cel shading, rich saturated colors, dynamic comic linework, and the office's natural daytime lighting. Preserve the approved face, apparent age, and body build; do not slim, bulk up, or substitute a generic man. Do not use retired office images, occupied-office comparisons, or a prior generated red-shirt office image as a base or comparison.
 

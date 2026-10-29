@@ -19,13 +19,21 @@ from typing import Any
 EXPECTED_FILES: dict[str, str] = {
     "assets/identity/jack-portrait-arms-crossed.jpg": "identity",
     "assets/identity/jack-portrait-pointing.jpg": "identity",
-    "assets/identity/jack-standing-pointing-front.png": "identity",
+    "assets/identity/jack-standing-pointing-front.jpg": "identity",
     "assets/identity/jack-standing-pointing-relaxed.jpg": "identity",
-    "assets/environments/office/office-main.png": "environment",
-    "assets/approved-scenes/jack-deck-bbq.png": "approved-scene",
+    "assets/environments/office/office-main.jpg": "environment",
+    "assets/approved-scenes/jack-deck-bbq.jpg": "approved-scene",
 }
 EXPECTED_SKILL = "z-jack-social-graphics"
 EXPECTED_SCHEMA_VERSION = 1
+OFFICE_INPUTS = (
+    "assets/environments/office/office-main.jpg",
+    "assets/identity/jack-standing-pointing-front.jpg",
+    "assets/identity/jack-portrait-pointing.jpg",
+)
+# Deliberately below the observed Hermes Krea 3 MiB raw-reference cap.
+# This is our portable payload budget, not a claim about every provider's limit.
+MAX_OFFICE_REFERENCE_BYTES = 2_000_000
 
 
 class VerificationError(ValueError):
@@ -209,12 +217,24 @@ def verify_assets(skill_dir: str | Path, manifest_path: str | Path | None = None
     except VerificationError as exc:
         errors.append(str(exc))
 
+    office_sizes = {item["path"]: item["size_bytes"] for item in verified_files if item["path"] in OFFICE_INPUTS}
+    office_request = None
+    if len(office_sizes) == len(OFFICE_INPUTS):
+        raw_bytes = sum(office_sizes.values())
+        # Encode each file separately, including data-URI prefixes; JSON/prompt overhead is extra.
+        data_uri_bytes = sum(4 * ((size + 2) // 3) + len("data:image/jpeg;base64,") for size in office_sizes.values())
+        office_request = {"input_order": list(OFFICE_INPUTS), "raw_bytes": raw_bytes,
+                          "data_uri_bytes": data_uri_bytes, "budget_bytes": MAX_OFFICE_REFERENCE_BYTES}
+        if raw_bytes > MAX_OFFICE_REFERENCE_BYTES:
+            errors.append(f"office references exceed {MAX_OFFICE_REFERENCE_BYTES} byte budget: {raw_bytes}; use the current optimized private package")
+
     return {
         "ok": not errors,
         "skill_dir": str(root),
         "manifest": str(manifest),
         "verified_files": verified_files if not errors else [],
         "errors": errors,
+        "office_request": office_request,
         "caveat": "Checksum and magic-byte verification only; images were not visually opened or reviewed.",
     }
 

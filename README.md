@@ -22,11 +22,13 @@ See [the exact companion source records](references/companion-skills.md). The li
 
 The repository is public and deliberately contains no identity or home reference images, secrets, credentials, account IDs, private Drive IDs, or private save receipts. A conforming private runtime payload contains exactly six active images:
 
-- Four unchanged identity masters under `assets/identity/`.
-- One and only one office image: `assets/environments/office/office-main.png`.
-- One non-office character/style comparison: `assets/approved-scenes/jack-deck-bbq.png`.
+- Four optimized identity masters under `assets/identity/`.
+- One and only one office image: `assets/environments/office/office-main.jpg`.
+- One non-office character/style comparison: `assets/approved-scenes/jack-deck-bbq.jpg`.
 
-`office-main.png` is the byte-identical private copy of the user-selected `CozyZedBizMountainLoftOffice.png` source. It is the sole office architecture, furniture, camera, and framing authority. No other office environment or occupied-office comparison belongs in the active runtime payload. Retired originals remain retained outside runtime rather than deleted and must never become public binaries.
+`office-main.jpg` is the optimized full-frame master derived from the user-selected `CozyZedBizMountainLoftOffice.png` source. It is the sole office architecture, furniture, camera, and framing authority. No other office environment or occupied-office comparison belongs in the active runtime payload. Full-size originals remain retained outside runtime rather than deleted and must never become public binaries. Each manifest entry records both the active hash/dimensions and archived original provenance.
+
+Active masters are high-quality JPEGs (quality 92, 4:4:4): portraits 1024 × 1024, office 1152 × 864, front body 768 × 1152, relaxed body 864 × 1152, and BBQ comparison 1152 × 768. The source PNG alpha channel was entirely opaque; no transparency was discarded. No crop, redraw, face change or body alteration was performed. The three office inputs total 983,933 bytes, down from 5,840,937; the verifier enforces a 2,000,000-byte raw reference budget with room for base64 expansion. Check current provider limits separately. Byte reduction alone does not establish lower generation charges.
 
 The office-base rule applies only to office requests. BBQ and other settings use their own task-specific references and requirements. A downloaded code-only package is not generation-ready: supply the private payload through the approved private channel and verify it. Saving an output does not authorize changing an identity or environment master. Jack must approve master changes and wider installation.
 
@@ -48,6 +50,6 @@ Validate the built folder with the bundled validator and the target platform's c
 
 Use `assets/pilot-request.md` for a representative office desk test and the acceptance checks in `references/quality-checks.md`. Verify actual platform discovery, reference-image input, image generation, and upload/read-back through the executing agent's own connection. A local checker or package import alone is not a successful real task.
 
-For an office test, use the documented ordered input sequence with `office-main.png` first, then the body and face references. Treat the task as placing Jack into the supplied office base: preserve the original wide 4:3 framing and required furniture relationships, but do not promise pixel-exact generative preservation. Make one actual-input-supported initial call and, only for one identified material defect, at most one focused correction. Include the executing agent's name in the internal output filename and retain its actual extension.
+For an office test, use the documented ordered input sequence with `office-main.jpg` first, then the body and face references. Treat the task as placing Jack into the supplied office base: preserve the original wide 4:3 framing and required furniture relationships, but do not promise pixel-exact generative preservation. Make one actual-input-supported initial call and, only for one identified material defect, at most one focused correction. Include the executing agent's name in the internal output filename and retain its actual extension.
 
 Keep changing rollout status in authoring activity records and Notion, not in runtime instructions. The offline helpers do not call image providers or Drive. Their successful checks cannot prove that an image was generated, visually inspected, uploaded, or accessible to another agent.

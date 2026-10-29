@@ -4,9 +4,9 @@
   "source": "Jack-supplied attachments, 2026-10-28",
   "files": [
     {
-      "path": "assets/approved-scenes/jack-deck-bbq.png",
-      "sha256": "7b2545a69f99402283d47ee965e2ef310b80f9868c277fb76fb946bc603fb489",
-      "size_bytes": 3026084,
+      "path": "assets/approved-scenes/jack-deck-bbq.jpg",
+      "sha256": "40bedfeebfa85eed33c283ea17d8d82f48e5706dde12b24ad9b4d7001239c5d9",
+      "size_bytes": 512693,
       "role": "approved-scene",
       "reference_purpose": [
         "visual-quality-comparison",
@@ -14,12 +14,26 @@
         "optional-compatible-edit-base"
       ],
       "scene_description": "approved standing outdoor BBQ",
-      "modality": "illustration"
+      "modality": "illustration",
+      "original_source": {
+        "path": "assets/approved-scenes/jack-deck-bbq.png",
+        "sha256": "7b2545a69f99402283d47ee965e2ef310b80f9868c277fb76fb946bc603fb489",
+        "size_bytes": 3026084,
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "dimensions": [
+        1152,
+        768
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     },
     {
-      "path": "assets/environments/office/office-main.png",
-      "sha256": "c9bd11f24436883a8fd73fb0be9c24d797c255bb8aac0393d71f15df23cb088c",
-      "size_bytes": 2743153,
+      "path": "assets/environments/office/office-main.jpg",
+      "sha256": "dcda8e3272b8fdf1db7d88f269e946b904a0569d522b904d794765f3d6969619",
+      "size_bytes": 476530,
       "role": "environment",
       "reference_purpose": [
         "sole-office-edit-base",
@@ -32,51 +46,122 @@
       "original_dimensions": [
         1448,
         1086
-      ]
+      ],
+      "original_source": {
+        "path": "assets/environments/office/office-main.png",
+        "sha256": "c9bd11f24436883a8fd73fb0be9c24d797c255bb8aac0393d71f15df23cb088c",
+        "size_bytes": 2743153,
+        "dimensions": [
+          1448,
+          1086
+        ]
+      },
+      "dimensions": [
+        1152,
+        864
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     },
     {
       "path": "assets/identity/jack-portrait-arms-crossed.jpg",
-      "sha256": "ed75abacf1b7d1db2016894328095c68e3ba8015cd5d300f210fee047dcca0da",
-      "size_bytes": 769754,
+      "sha256": "b68c226e952c8d408ed7214f8ce46306560bce52c9224fb50c2a7c96d67d1600",
+      "size_bytes": 311282,
       "role": "identity",
       "reference_purpose": [
         "face",
         "illustration-style"
-      ]
+      ],
+      "original_source": {
+        "path": "assets/identity/jack-portrait-arms-crossed.jpg",
+        "sha256": "ed75abacf1b7d1db2016894328095c68e3ba8015cd5d300f210fee047dcca0da",
+        "size_bytes": 769754,
+        "dimensions": [
+          2048,
+          2048
+        ]
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     },
     {
       "path": "assets/identity/jack-portrait-pointing.jpg",
-      "sha256": "26d2b9efb3b874d620c899457e75f4b7b5aeba9ce80ea7ade3d64981db30683d",
-      "size_bytes": 785501,
+      "sha256": "7c235d6a4c7ef3b7a6bc46d0c0431b7ba0730b09c93e1b267a6cfe5a8c50d58e",
+      "size_bytes": 310955,
       "role": "identity",
       "reference_purpose": [
         "face",
         "illustration-style"
-      ]
+      ],
+      "original_source": {
+        "path": "assets/identity/jack-portrait-pointing.jpg",
+        "sha256": "26d2b9efb3b874d620c899457e75f4b7b5aeba9ce80ea7ade3d64981db30683d",
+        "size_bytes": 785501,
+        "dimensions": [
+          2048,
+          2048
+        ]
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     },
     {
-      "path": "assets/identity/jack-standing-pointing-front.png",
-      "sha256": "8bc9ac00e9381546e9ae7d9f0ec886184272e2fa668b100d8e40dc636f56f470",
-      "size_bytes": 2312283,
+      "path": "assets/identity/jack-standing-pointing-front.jpg",
+      "sha256": "6ba2fcac112a71d4d5ec2643b2befd040981701e8e186911cd91c0cd38595059",
+      "size_bytes": 196448,
       "role": "identity",
       "reference_purpose": [
         "body-build",
         "proportions",
         "illustration-style"
-      ]
+      ],
+      "original_source": {
+        "path": "assets/identity/jack-standing-pointing-front.png",
+        "sha256": "8bc9ac00e9381546e9ae7d9f0ec886184272e2fa668b100d8e40dc636f56f470",
+        "size_bytes": 2312283,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "dimensions": [
+        768,
+        1152
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     },
     {
       "path": "assets/identity/jack-standing-pointing-relaxed.jpg",
-      "sha256": "a62307a8365e8d2f48f1dafa5e97f4c36a4751b49f436eb2dab7be15ec4a61e5",
-      "size_bytes": 215249,
+      "sha256": "cedf10030e02e28e6d45a17ce2a7a4fe7faad45c9c79b13269c75ebb0a5a96c7",
+      "size_bytes": 190428,
       "role": "identity",
       "reference_purpose": [
         "body-build",
         "proportions",
         "illustration-style"
-      ]
+      ],
+      "original_source": {
+        "path": "assets/identity/jack-standing-pointing-relaxed.jpg",
+        "sha256": "a62307a8365e8d2f48f1dafa5e97f4c36a4751b49f436eb2dab7be15ec4a61e5",
+        "size_bytes": 215249,
+        "dimensions": [
+          864,
+          1152
+        ]
+      },
+      "dimensions": [
+        864,
+        1152
+      ],
+      "encoding": "JPEG quality 92, 4:4:4; full-frame Lanczos downsample; no generative edits"
     }
   ],
-  "reference_policy": "Exactly one active office image: office-main.png, the user-selected CozyZedBizMountainLoftOffice source. Preserve its furniture and full framing. Four character identity masters remain byte-unchanged. The sole approved scene comparison is non-office BBQ. Retired original sources remain outside the active runtime and must not be reintroduced.",
-  "reference_set": "single-office-v3"
+  "reference_policy": "Six optimized active masters derived from verified Jack-approved originals, retained separately in private archive. Preserve full framing, identity, proportions and content. office-main.jpg is the sole office base. Use active bytes as-is; do not repeatedly recompress or attach archived originals. Master changes require Jack approval.",
+  "reference_set": "optimized-masters-v4",
+  "office_request_budget_bytes": 2000000
 }
