@@ -21,12 +21,7 @@ EXPECTED_FILES: dict[str, str] = {
     "assets/identity/jack-portrait-pointing.jpg": "identity",
     "assets/identity/jack-standing-pointing-front.png": "identity",
     "assets/identity/jack-standing-pointing-relaxed.jpg": "identity",
-    "assets/environments/office/office-main-desk.webp": "environment",
-    "assets/environments/office/office-wide-loft.png": "environment",
-    "assets/environments/office/office-hallway-reverse.png": "environment",
-    "assets/environments/office/office-desk-closeup.png": "environment",
-    "assets/approved-scenes/jack-office-mouse-mug.png": "approved-scene",
-    "assets/approved-scenes/jack-office-seated-mug.png": "approved-scene",
+    "assets/environments/office/office-main.png": "environment",
     "assets/approved-scenes/jack-deck-bbq.png": "approved-scene",
 }
 EXPECTED_SKILL = "z-jack-social-graphics"
@@ -161,6 +156,16 @@ def verify_assets(skill_dir: str | Path, manifest_path: str | Path | None = None
             errors.append("manifest contains unexpected paths: " + ", ".join(extra))
         if len(files) != len(EXPECTED_FILES):
             errors.append(f"manifest must contain exactly {len(EXPECTED_FILES)} files")
+
+        # Retired office or comparison images must not remain discoverable in an
+        # active payload even when they have been removed from its manifest.
+        assets_root = root / "assets"
+        if assets_root.is_dir():
+            for payload_path in assets_root.rglob("*"):
+                if payload_path.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".gif"}:
+                    relative = payload_path.relative_to(root).as_posix()
+                    if relative not in expected_paths:
+                        errors.append(f"unlisted image in active payload: {relative}")
 
         for relative_path, expected_role in EXPECTED_FILES.items():
             entry = entries.get(relative_path)

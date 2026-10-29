@@ -1,6 +1,6 @@
 # Z Jack Social Graphics
 
-This repository contains the authoritative technical source for `z-jack-social-graphics`, a ZedBiz skill that creates or revises any graphic featuring Jack and automatically saves completed results to the approved Shared Drive home.
+This repository contains the public code and documentation source for `z-jack-social-graphics`, a ZedBiz skill for creating or revising graphics featuring Jack. It is **not** a complete private image package and contains no reference-image binaries.
 
 [SKILL.md](SKILL.md) is the authoritative agent instruction file. This README, tests, and activity records are authoring material and are excluded from the installed package.
 
@@ -20,9 +20,15 @@ See [the exact companion source records](references/companion-skills.md). The li
 
 ## Reference images and safety
 
-The repository is public and deliberately contains no identity or home reference images, secrets, credentials, account IDs, private Drive IDs, or private save receipts. A private package adds the original eight reference images and three approved scene-comparison images listed in [the reference-library contract](references/reference-library.md) and `assets/reference-manifest.json`. The original identity masters remain unchanged.
+The repository is public and deliberately contains no identity or home reference images, secrets, credentials, account IDs, private Drive IDs, or private save receipts. A conforming private runtime payload contains exactly six active images:
 
-A downloaded code-only package is not generation-ready. Supply the private payload through the approved private channel and verify it. Saving an output does not authorize changing a reference master. Jack must approve master changes and wider installation.
+- Four unchanged identity masters under `assets/identity/`.
+- One and only one office image: `assets/environments/office/office-main.png`.
+- One non-office character/style comparison: `assets/approved-scenes/jack-deck-bbq.png`.
+
+`office-main.png` is the byte-identical private copy of the user-selected `CozyZedBizMountainLoftOffice.png` source. It is the sole office architecture, furniture, camera, and framing authority. No other office environment or occupied-office comparison belongs in the active runtime payload. Retired originals remain retained outside runtime rather than deleted and must never become public binaries.
+
+The office-base rule applies only to office requests. BBQ and other settings use their own task-specific references and requirements. A downloaded code-only package is not generation-ready: supply the private payload through the approved private channel and verify it. Saving an output does not authorize changing an identity or environment master. Jack must approve master changes and wider installation.
 
 ## Validate and package
 
@@ -34,16 +40,14 @@ python3 -m unittest discover -s tests -v
 python3 scripts/build_package.py --private-assets /approved/local/reference-payload --output-dir /approved/local/build-output
 ```
 
-The private payload directory contains the `assets/identity/`, `assets/environments/office/` and `assets/approved-scenes/` paths expected by the manifest. Run the builder's `--help` for supported options. Omit `--private-assets` only to build a clearly labelled code-only package. The builder records the source commit, reference-manifest checksum, runtime file hashes, and ZIP checksum outside the installed skill folder.
+Only package a private payload that conforms to the six-image active-payload contract. Run the builder's `--help` for supported options. Omit `--private-assets` only to build a clearly labelled code-only package. The builder records the source commit, reference-manifest checksum, runtime file hashes, and ZIP checksum outside the installed skill folder.
 
 Validate the built folder with the bundled validator and the target platform's current validator when available. The validator helper is reused from the recorded Z AI Skill Developer source. It requires a real YAML reader; do not replace that check with ad-hoc parsing.
 
 ## Real task testing and release
 
-Use `assets/pilot-request.md` for a representative test and the acceptance checks in `references/quality-checks.md`. Verify actual platform discovery, reference-image input, image generation, and upload/read-back through that agent's own connection. A local checker or package import alone is not a successful real task.
+Use `assets/pilot-request.md` for a representative office desk test and the acceptance checks in `references/quality-checks.md`. Verify actual platform discovery, reference-image input, image generation, and upload/read-back through the executing agent's own connection. A local checker or package import alone is not a successful real task.
 
-Use Jack's short new-scene prompt pattern with actual ordered reference inputs. Check face/build and physical scene relationships, not just requested objects and shirt color. Include the executing agent's name in the internal output filename. Optional edits of an approved scene do not alone prove the new-scene route works.
+For an office test, use the documented ordered input sequence with `office-main.png` first, then the body and face references. Treat the task as placing Jack into the supplied office base: preserve the original wide 4:3 framing and required furniture relationships, but do not promise pixel-exact generative preservation. Make one actual-input-supported initial call and, only for one identified material defect, at most one focused correction. Include the executing agent's name in the internal output filename and retain its actual extension.
 
-Test one agent, present the result to Jack, and obtain approval before wider installation. Install only the exact tested source-linked package. Keep changing rollout status in authoring activity records and Notion, not in runtime instructions.
-
-The offline helpers do not call image providers or Drive. Their successful checks cannot prove that an image was generated, visually inspected, uploaded, or accessible to another agent.
+Keep changing rollout status in authoring activity records and Notion, not in runtime instructions. The offline helpers do not call image providers or Drive. Their successful checks cannot prove that an image was generated, visually inspected, uploaded, or accessible to another agent.

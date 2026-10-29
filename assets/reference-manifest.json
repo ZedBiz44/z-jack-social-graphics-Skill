@@ -4,48 +4,35 @@
   "source": "Jack-supplied attachments, 2026-10-28",
   "files": [
     {
-      "path": "assets/environments/office/office-desk-closeup.png",
-      "sha256": "0408a5db1bff9c82cbbc88ba2dec8dd020c2a74ef5325521d8f32945d98d6b8d",
-      "size_bytes": 2652279,
-      "role": "environment",
+      "path": "assets/approved-scenes/jack-deck-bbq.png",
+      "sha256": "7b2545a69f99402283d47ee965e2ef310b80f9868c277fb76fb946bc603fb489",
+      "size_bytes": 3026084,
+      "role": "approved-scene",
       "reference_purpose": [
-        "illustrated-layout",
-        "framing"
+        "visual-quality-comparison",
+        "approved-build-and-style",
+        "optional-compatible-edit-base"
       ],
+      "scene_description": "approved standing outdoor BBQ",
       "modality": "illustration"
     },
     {
-      "path": "assets/environments/office/office-hallway-reverse.png",
-      "sha256": "be90e663606e31a703b9a56e90545237ce8e2a624a4b6c8a2f84e3e31c885cbb",
-      "size_bytes": 2488219,
-      "role": "environment",
-      "reference_purpose": [
-        "real-layout",
-        "geometry-context"
-      ],
-      "modality": "photograph"
-    },
-    {
-      "path": "assets/environments/office/office-main-desk.webp",
-      "sha256": "8a8969447de6460bd8daa8dd4b9adb87d8089b333f7772f76c219f40b71818c9",
-      "size_bytes": 283548,
-      "role": "environment",
-      "reference_purpose": [
-        "illustrated-layout",
-        "framing"
-      ],
-      "modality": "illustration"
-    },
-    {
-      "path": "assets/environments/office/office-wide-loft.png",
+      "path": "assets/environments/office/office-main.png",
       "sha256": "c9bd11f24436883a8fd73fb0be9c24d797c255bb8aac0393d71f15df23cb088c",
       "size_bytes": 2743153,
       "role": "environment",
       "reference_purpose": [
-        "illustrated-layout",
-        "framing"
+        "sole-office-edit-base",
+        "fixed-layout",
+        "fixed-camera",
+        "fixed-furniture"
       ],
-      "modality": "illustration"
+      "modality": "illustration",
+      "source_filename": "CozyZedBizMountainLoftOffice.png",
+      "original_dimensions": [
+        1448,
+        1086
+      ]
     },
     {
       "path": "assets/identity/jack-portrait-arms-crossed.jpg",
@@ -88,46 +75,8 @@
         "proportions",
         "illustration-style"
       ]
-    },
-    {
-      "path": "assets/approved-scenes/jack-office-mouse-mug.png",
-      "sha256": "9f7c2266bb5cbabc8ca4bd0e47301ede31c979746d949e385dda17cf9a14d632",
-      "size_bytes": 2675724,
-      "role": "approved-scene",
-      "reference_purpose": [
-        "visual-quality-comparison",
-        "approved-build-and-style",
-        "optional-compatible-edit-base"
-      ],
-      "scene_description": "approved seated office, mug hand and mouse hand",
-      "modality": "illustration"
-    },
-    {
-      "path": "assets/approved-scenes/jack-office-seated-mug.png",
-      "sha256": "02c617ea460b9af111ca5b5edca2a86fdbfd3266e2d1f5aab89d61590d3e5bde",
-      "size_bytes": 2890598,
-      "role": "approved-scene",
-      "reference_purpose": [
-        "visual-quality-comparison",
-        "approved-build-and-style",
-        "optional-compatible-edit-base"
-      ],
-      "scene_description": "approved seated office, mug hand and relaxed other hand",
-      "modality": "illustration"
-    },
-    {
-      "path": "assets/approved-scenes/jack-deck-bbq.png",
-      "sha256": "7b2545a69f99402283d47ee965e2ef310b80f9868c277fb76fb946bc603fb489",
-      "size_bytes": 3026084,
-      "role": "approved-scene",
-      "reference_purpose": [
-        "visual-quality-comparison",
-        "approved-build-and-style",
-        "optional-compatible-edit-base"
-      ],
-      "scene_description": "approved standing outdoor BBQ",
-      "modality": "illustration"
     }
   ],
-  "reference_policy": "Original identity masters preserved. Approved scenes are comparison examples or explicitly selected edit bases, not automatically promoted identity masters. One primary layout source per task."
+  "reference_policy": "Exactly one active office image: office-main.png, the user-selected CozyZedBizMountainLoftOffice source. Preserve its furniture and full framing. Four character identity masters remain byte-unchanged. The sole approved scene comparison is non-office BBQ. Retired original sources remain outside the active runtime and must not be reintroduced.",
+  "reference_set": "single-office-v3"
 }

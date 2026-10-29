@@ -28,11 +28,14 @@ Create the requested graphic of the same approved Jack, check both the person an
 - Establish the requested scene, activity, clothing, gaze, pose, props, format and owner. Ask only for details that prevent correct or authorized work; do not make Jack relay an assignment the agent can execute itself.
 - Follow the live [folder structure](https://www.notion.so/386a3e33d58180ea96fbc50b60102fe2) and [Files & Folders Guide](https://www.notion.so/3a9a3e33d58180548f4af69e804dcdfc). A user-specified destination still requires ownership/access verification; do not maintain another folder map here.
 - Verify the executing agent's approved connection and binary upload/read-back ability. Keep private accounts, folder IDs and receipts outside public code.
-- Include the executing agent's readable name in every new graphic filename, with a useful topic, date and version, using the companion's naming rules. Example: `jack-desk-red-golf-pointing-terry-2026-10-28-v02.png`. Match the extension to the actual image bytes. This is file attribution, not text to draw on the image.
+- Include the executing agent's readable name in every new graphic filename, with a useful topic, date and version, using the companion's naming rules. Example: `jack-desk-black-golf-pointing-terry-2026-10-28-v03.png`. Match the extension to the actual image bytes. This is file attribution, not text to draw on the image.
 - Check for existing names before writing; choose a new clear version rather than overwriting an original.
 
 ## Choose the scene route and image inputs
 
+- For Jack's recurring loft office, use only `assets/environments/office/office-main.png`, the exact selected CozyZedBizMountainLoftOffice image, as the fixed scene base. Insert Jack into its existing chair through the verified image-edit/reference interface; do not freely reconstruct the office.
+- Keep that image's full wide framing, camera, desk shape/drawers/end panel, simple grey upholstered chair with pale curved arms and pale five-spoke base, chair position, monitors, windows and railing. Do not zoom closer, crop the setting, substitute a black mesh chair, or import another office view or prior output. Preserve unchanged surroundings; do not promise pixel-identical generative preservation.
+- Retired office views and occupied-office comparison pictures are not active references, even when a cache or older package still contains them. Load only the current six-image manifest. Original sources remain retained outside the installed package.
 - For a new setting, activity or composition, use reference-based new-scene generation. Keep Jack's short prompt structure; do not require an already-occupied picture to create new scenes.
 - For a small change to an approved compatible picture, an image edit may preserve more of the correct scene. Use it only when the actual tool accepts the base image for editing. Do not confuse an edit test with proof that new-scene generation works.
 - For every route, explicitly assign each actual input its role: primary environment/layout, character face, body/build, optional prop, or approved style/comparison. Choose one primary layout view; do not blend inconsistent desk shapes or camera angles.
@@ -52,7 +55,7 @@ Create the requested graphic of the same approved Jack, check both the person an
 ## Reject visual failures before delivery
 
 - Open the actual result and compare it with the request, supplied identity/build inputs, primary layout view and approved scene examples. Use [the visual checklist](references/quality-checks.md) and state what is uncertain rather than inventing measurements or a perfect-match score.
-- Fail changed facial character/build, wrong requested pose/attire, extra or unsupported chairs, wrong desk layout, impossible hands, or furniture passing through the body. Ordinary foreground occlusion is not the same as impossible intersection.
+- Fail changed facial character/build, wrong requested pose/attire, extra or unsupported chairs, wrong desk layout, impossible hands, or furniture passing through the body. For the loft office, also reject a redesigned desk/chair or changed camera/framing; a plausible workstation alone does not pass. Ordinary foreground occlusion is not the same as impossible intersection.
 - Check counts, occupancy, support and body/object boundaries before small decorative details. A nice background, readable cap or correct shirt does not excuse a bad physical scene.
 - If one focused material defect remains, make at most one targeted correction in the same verified route. Name the actual defect and preserve only elements that are already correct; do not instruct the tool to preserve a broken desk arrangement.
 - Recheck the corrected result against the complete checklist. If it still fails, or identity/layout is broadly broken, retain the attempt, report the concrete problem and stop. Do not run repeated variations or label a failed picture finished.

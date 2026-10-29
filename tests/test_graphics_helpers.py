@@ -72,7 +72,7 @@ class ReferenceVerifierTests(unittest.TestCase):
             self.assertEqual(len(verify_reference_assets.EXPECTED_FILES), len(result["verified_files"]))
             self.assertIn("not visually opened", result["caveat"])
 
-    def test_original_eight_only_cannot_pass_revised_payload(self) -> None:
+    def test_missing_nonoffice_comparison_cannot_pass_current_payload(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory) / "payload"
             manifest = manifest_for(root)
@@ -82,6 +82,22 @@ class ReferenceVerifierTests(unittest.TestCase):
             result = verify_reference_assets.verify_assets(root, manifest_path)
             self.assertFalse(result["ok"])
             self.assertTrue(any("missing expected paths" in error for error in result["errors"]))
+
+    def test_selected_office_base_is_unique(self) -> None:
+        office_paths = [path for path in verify_reference_assets.EXPECTED_FILES if path.startswith("assets/environments/office/")]
+        self.assertEqual(["assets/environments/office/office-main.png"], office_paths)
+        self.assertFalse(any("jack-office-" in path for path in verify_reference_assets.EXPECTED_FILES))
+
+    def test_retired_office_image_in_active_payload_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "payload"
+            manifest = manifest_for(root)
+            write_image(root / "assets/environments/office/office-main-desk.webp", b"retired")
+            manifest_path = Path(directory) / "reference-manifest.json"
+            write_manifest(manifest_path, manifest)
+            result = verify_reference_assets.verify_assets(root, manifest_path)
+            self.assertFalse(result["ok"])
+            self.assertTrue(any("unlisted image in active payload" in error for error in result["errors"]))
 
     def test_missing_and_tampered_payload_fail(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -305,6 +321,13 @@ class PackageBuilderTests(unittest.TestCase):
             runtime = Path(result["runtime"])
             for relative in verify_reference_assets.EXPECTED_FILES:
                 self.assertTrue((runtime / relative).is_file(), relative)
+
+    def test_unlisted_source_image_cannot_leak_into_package(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root, private, _ = self._repository(Path(directory), include_private=True)
+            write_image(root / "assets/environments/office/retired.png", b"retired")
+            with self.assertRaises(build_package.PackageError):
+                build_package.build_package(root=root, output_dir=Path(directory) / "output", private_assets=private, source_commit="test-commit")
 
 
 if __name__ == "__main__":

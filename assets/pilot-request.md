@@ -1,11 +1,19 @@
 # Reference-Based Desk Test
 
-Create one landscape social graphic of the same approved Jack seated naturally at his loft workstation. He wears a solid red collared golf shirt and the grey ZedBiz cap, looks toward the camera and points with one hand. Let the other hand rest naturally on the desk or mouse.
+Resolve SKILL_ROOT to the executing agent's actual installed skill directory. Expand the listed paths to existing absolute files before generation.
 
-Supply actual images in the roles/order documented in the prompt template: the primary desk-layout image, an approved full-body/build reference and an approved face reference. Create a new scene from those references. Compare the result with Jack's approved seated scene examples; do not merely report that the files exist.
+Create one 4:3 landscape social graphic of approved Jack seated naturally at the supplied loft workstation. He wears a solid black collared golf shirt and ZedBiz cap, faces and looks toward the camera, and points naturally toward the camera with one hand. His other hand rests naturally on the mouse or desk.
 
-Keep the referenced wooden desk, three-monitor arrangement, timber triangular windows, burgundy wall, plants and railing. Jack uses the existing single chair at the working side of the desk. Do not keep an empty chair and add another. His body must be naturally supported, with no desktop or desk edge passing through his stomach or torso. Keep the pose, hands and contact with the desk believable.
+Use an actual-input-supported office insertion/new-scene route. Attach these exact private images in this order:
 
-Use Jack's colorful comic-book caricature style, clean bold black outlines, vibrant cel shading, rich colors and warm daytime lighting. Preserve the approved face, age appearance and body build; do not slim, bulk up or substitute a generic man.
+1. `{SKILL_ROOT}/assets/environments/office/office-main.png`: the supplied base and sole authority for office architecture, furniture, camera, and framing.
+2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.png`: approved full-body/build reference.
+3. `{SKILL_ROOT}/assets/identity/jack-portrait-pointing.jpg`: approved facial reference.
 
-Inspect the actual result before saving, with at most one focused correction through the same verified route. Automatically save a passing result in the current assignment's approved destination. Include the executing agent's name in the filename, using the companion naming guide, a new version and the true image extension. Return the actual filename, dimensions, verified Drive file link and any remaining material limitation. Do not publish or overwrite an original.
+Treat this as placing Jack into `office-main.png`, not freely reconstructing or reframing the office. Preserve the full original wide 4:3 view, desk shape, drawers, end panel, desk position, monitors, windows, railing, surrounding objects, and chair location. Jack occupies the one existing simple grey upholstered chair with pale curved arms and a pale five-spoke base. Do not replace it with a black mesh or modern metal chair, leave an empty chair, add any chair or desk, or allow furniture to intersect his body. Only natural body or hand occlusion is allowed.
+
+Use Jack's colorful comic-book caricature style: clean bold black outlines, vibrant cel shading, rich saturated colors, dynamic comic linework, and the office's natural daytime lighting. Preserve the approved face, apparent age, and body build; do not slim, bulk up, or substitute a generic man. Do not use retired office images, occupied-office comparisons, or a prior generated red-shirt office image as a base or comparison.
+
+Inspect the actual result before saving. Make one actual-input-supported initial call and, only for one specifically identified material defect, at most one focused correction through the same verified route. Do not claim pixel-exact generative preservation; report whether the required office relationships and framing visually hold. If the tool cannot accept the three inputs or the correction still materially fails, stop and report the capability gap or defect.
+
+Save only a passing result through the assignment's authorized destination and read-back process. The filename must include the executing agent's name, topic, date, version, and actual returned extension; for example, a PNG saved by Terry may be `jack-desk-black-golf-pointing-terry-2026-10-28-v03.png`. Return the actual filename, dimensions, verified saved-file link when available, and any remaining material limitation. Do not publish or overwrite an original.

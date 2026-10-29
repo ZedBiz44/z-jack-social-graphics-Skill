@@ -1,57 +1,54 @@
 # Private Reference Library
 
-The repository contains instructions and a checksum manifest, not public image payloads. Use approved files only through an authorized private task. Keep originals unchanged.
+This public repository contains instructions and a checksum manifest, not image binaries. Use private reference files only through an authorized private task. Never publish, embed, or link their bytes here.
 
-## Original eight references
+## Active private payload: six images
 
-The existing original names, roles, extensions, and manifest hashes remain unchanged.
+The active private payload contains exactly these six images:
 
-### Jack identity
+### Jack identity masters: four unchanged files
 
-- `assets/identity/jack-portrait-arms-crossed.jpg` — close facial identity and illustrated treatment.
-- `assets/identity/jack-portrait-pointing.jpg` — close facial identity and illustrated treatment.
-- `assets/identity/jack-standing-pointing-front.png` — full-body mature Jack build and front-facing proportions.
-- `assets/identity/jack-standing-pointing-relaxed.jpg` — full-body mature Jack build and relaxed proportions.
+- `assets/identity/jack-portrait-arms-crossed.jpg`: close facial identity and illustrated treatment.
+- `assets/identity/jack-portrait-pointing.jpg`: close facial identity and illustrated treatment.
+- `assets/identity/jack-standing-pointing-front.png`: mature full-body build and front-facing proportions.
+- `assets/identity/jack-standing-pointing-relaxed.jpg`: mature full-body build and relaxed proportions.
 
-Use a close portrait and a full-body image together when the tool supports the needed input count. The current request controls only the requested attire, pose, activity, expression, gaze, scene, lighting, and framing; it never authorizes changing Jack's face or build. A portrait's pointing, crossed arms, plaid, or clothing is not a standing instruction.
+Keep these identity files unchanged. Use a close portrait and a compatible full-body reference together when the confirmed live tool supports the required inputs. A reference image's clothing, pose, or expression is not an instruction unless the task requests it.
 
-### Office environment
+### Sole office environment: one file
 
-- `assets/environments/office/office-main-desk.webp` — primary desk view; chair/workstation relationship and camera for seated desk requests.
-- `assets/environments/office/office-wide-loft.png` — wide room layout and standing-scene context.
-- `assets/environments/office/office-hallway-reverse.png` — reverse-view real layout reference.
-- `assets/environments/office/office-desk-closeup.png` — workstation details.
+- `assets/environments/office/office-main.png`: the sole active office architecture, furniture, camera, and framing authority.
 
-Choose one layout authority. Do not combine these views into an invented camera or use stylized screen/exterior details as real geometry. For other scenes, use their relevant environment references; office geometry does not apply to a deck, pool, BBQ, or resort.
+`office-main.png` must be the byte-identical private copy of the user-selected `CozyZedBizMountainLoftOffice.png` source. It is the only office environment input or active office comparison. Preserve it as the full original wide 4:3 view. Retired office originals and occupied-office comparison images remain outside the runtime payload; retain them privately rather than deleting them, but never attach, list as active, or publish them.
 
-## Approved scene comparison examples
+### Non-office scene/style comparison: one file
 
-The following private paths are approved scene/style/build comparison examples. Their availability is tracked privately with the approved payload, manifest, and verifier process; they do not alter the original eight reference entries or hashes.
+- `assets/approved-scenes/jack-deck-bbq.png`: an approved Jack build/style comparison for a BBQ scene.
 
-- `assets/approved-scenes/jack-office-mouse-mug.png` — approved seated office build, occupied-chair relationship, and hand-on-mouse reference.
-- `assets/approved-scenes/jack-office-seated-mug.png` — approved seated office build and alternate natural hand placement.
-- `assets/approved-scenes/jack-deck-bbq.png` — approved Jack build/style in a green Riders shirt at a BBQ.
-
-These are not permanent identity masters, automatic generation inputs, or permission to promote later outputs. Use them for visual comparison after a new-scene attempt, or as a compatible edit base only when the request and verified edit tool support that route. Jack alone approves permanent-master changes.
+This BBQ image is not an office input, office comparison, identity master, or automatic generation input. Use task-specific references for other settings; the office-base rule does not impose an office on BBQ, deck, pool, resort, or other scenes.
 
 ## Required reference discipline
 
-- Pass image bytes through the live tool's supported image inputs; written paths, filenames, and descriptions do not count.
-- Record each call's exact input order and assigned role. Describe “environment first, character last” only when that is how the call was actually made.
-- Use a single primary environment view for camera and structure. Supplemental inputs may supply a detail, not contradict the primary view.
-- For a new Jack scene, use real environment, body, and face inputs. If the actual tool cannot receive the required inputs, stop instead of making a generic substitute.
-- Use an approved scene as visual QA only unless it is explicitly the passed edit base. Do not feed multiple approved scenes as competing layout controls.
+- Pass actual image bytes through the live tool's supported image-input mechanism. A written filename, description, link, or prompt mention is not an image input.
+- Record each call's exact input order and role. Describe an order only when those exact bytes were attached in that order.
+- For an office desk request, use `office-main.png` as the one and only layout authority. Treat the request as inserting Jack into the supplied base, not permission to reconstruct or reframe the office.
+- Do not attach a retired office image, an occupied-office example, or a prior generated office result as a competing base or comparison.
+- If the actual tool cannot receive the required inputs, stop and report the capability gap. Do not substitute a generic textual Jack or an invented office.
 
-## First new-scene Terry test
+## Office desk-test input order
 
-Subject to live-tool support for all three supplied image inputs, use this order and no invented reorder:
+Resolve SKILL_ROOT to the executing agent's actual installed skill directory. Expand the paths below to real absolute files before the call; do not pass placeholder paths.
 
-1. `assets/environments/office/office-main-desk.webp` — primary layout; it includes the empty existing chair.
-2. `assets/identity/jack-standing-pointing-front.png` — Jack's body build.
-3. `assets/identity/jack-portrait-pointing.jpg` — Jack's facial identity.
+Subject to confirmed support for all three actual image inputs, use this order exactly:
 
-Compare the result visually with the approved seated office examples after generation. Those comparison files do not become scene-control generation inputs for this test.
+1. `{SKILL_ROOT}/assets/environments/office/office-main.png`: supplied office base; sole authority for the original wide 4:3 view, room, furniture, camera, and framing.
+2. `{SKILL_ROOT}/assets/identity/jack-standing-pointing-front.png`: Jack's mature body build and proportions.
+3. `{SKILL_ROOT}/assets/identity/jack-portrait-pointing.jpg`: Jack's facial identity, apparent age, eyes, smile, and goatee.
+
+Keep the existing desk shape, drawers, end panel, position, monitors, windows, railing, surrounding objects, and chair location. Jack must occupy the existing simple grey upholstered chair with pale curved arms and a pale five-spoke base; do not replace it with a black mesh or modern metal chair, retain an empty chair, or add furniture. Only natural body or hand occlusion is allowed.
+
+Make one actual-input-supported initial call and, only for one specifically identified material defect, at most one focused correction through the same verified route. Generation cannot be promised to preserve every source pixel; assess the required visual relationships instead.
 
 ## Integrity and privacy
 
-`assets/reference-manifest.json` and `scripts/verify_reference_assets.py` check locally supplied private files; they do not prove visual quality or tool attachment. Never place image binaries, base64 payloads, private download links, account details, or private folder IDs in the public repository or public status records. New outputs are outputs, not masters, and preserve their actual extension.
+`assets/reference-manifest.json` and `scripts/verify_reference_assets.py` check locally supplied private files; they do not establish visual quality or tool attachment. New outputs are outputs, not masters, and retain their actual extension. Never put image binaries, base64 payloads, private download links, account details, or private folder IDs in the public repository or public status records.

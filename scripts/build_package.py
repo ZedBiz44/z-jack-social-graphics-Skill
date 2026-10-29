@@ -303,6 +303,20 @@ def build_package(
             status = "verified private reference payload present; generation-ready"
         else:
             status = "reference images absent, NOT generation-ready"
+
+        actual_images = {
+            path.relative_to(staged_runtime).as_posix()
+            for path in (staged_runtime / "assets").rglob("*")
+            if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".gif"}
+        }
+        unlisted_images = sorted(actual_images - set(EXPECTED_FILES))
+        if unlisted_images:
+            raise PackageError("unlisted image in runtime package: " + ", ".join(unlisted_images))
+        if generation_ready:
+            final_assets = verify_assets(staged_runtime, staged_runtime / "assets/reference-manifest.json")
+            if not final_assets["ok"]:
+                raise PackageError("built runtime references failed verification: " + "; ".join(final_assets["errors"]))
+
         (staged_runtime / "scripts" / "package-status.json").write_text(
             json.dumps(
                 {"generation_ready": generation_ready, "reference_image_status": status},
